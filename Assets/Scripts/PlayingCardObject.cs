@@ -12,7 +12,7 @@ public class PlayingCardObject : MonoBehaviour
         return playingCardSO.cardRank;
     }
 
-    // Returns if the card is an upcard (e.g: rank 7 - King).
+    // Returns if the card is an upcard (e.g: rank 8 - King).
     public bool GetIsUpCard()
     {
         return playingCardSO.isUpCard;

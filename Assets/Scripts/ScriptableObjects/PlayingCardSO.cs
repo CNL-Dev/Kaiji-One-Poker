@@ -16,6 +16,7 @@ public class PlayingCardSO : ScriptableObject
         Seven,
         Eight,
         Nine,
+        Ten,
         Jack,
         Queen,
         King,
