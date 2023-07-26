@@ -6,8 +6,7 @@ using UnityEngine;
 public class PlayingCardSO : ScriptableObject
 {
     public enum Rank
-    {
-        Ace,
+    {        
         Two,
         Three,
         Four,
@@ -20,6 +19,7 @@ public class PlayingCardSO : ScriptableObject
         Jack,
         Queen,
         King,
+        Ace,
     }
 
     /// <summary>

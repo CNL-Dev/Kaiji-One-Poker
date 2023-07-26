@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BlackJackOfClubsSO
   m_EditorClassIdentifier: 
   cardTransform: {fileID: 1991397259485127, guid: 70d491d0e1290ae4589283c6ab583695, type: 3}
-  cardRank: 10
-  cardName: Black Jack of Clubs
+  cardRank: 9
+  cardName: Jack of Clubs
   isUpCard: 1

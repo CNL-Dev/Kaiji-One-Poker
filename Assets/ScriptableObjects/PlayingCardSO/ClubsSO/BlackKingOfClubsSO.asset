@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BlackKingOfClubsSO
   m_EditorClassIdentifier: 
   cardTransform: {fileID: 1126314410688198426, guid: 7c397f5ba685bc042a68776648d51d6a, type: 3}
-  cardRank: 12
-  cardName: Black King of Clubs
+  cardRank: 11
+  cardName: King of Clubs
   isUpCard: 1

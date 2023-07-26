@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BlackSevenOfClubsSO
   m_EditorClassIdentifier: 
   cardTransform: {fileID: 4625634155683504878, guid: ddabeaaf0ebabdf499cb57985c19d534, type: 3}
-  cardRank: 6
-  cardName: Black Seven of Clubs
+  cardRank: 5
+  cardName: Seven of Clubs
   isUpCard: 0

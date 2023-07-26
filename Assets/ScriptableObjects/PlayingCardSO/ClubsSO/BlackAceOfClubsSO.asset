@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BlackAceOfClubsSO
   m_EditorClassIdentifier: 
   cardTransform: {fileID: 1858009322094873330, guid: 50fbe0e454e5da442970b22adb93f50f, type: 3}
-  cardRank: 0
-  cardName: Black Ace of Clubs
-  isUpCard: 0
+  cardRank: 12
+  cardName: Ace of Clubs
+  isUpCard: 1

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BlackQueenOfClubsSO
   m_EditorClassIdentifier: 
   cardTransform: {fileID: 3010072608815872224, guid: 3714b39265faa6d4bb49ea9d3c5cfda6, type: 3}
-  cardRank: 11
-  cardName: Black Queen of Clubs
+  cardRank: 10
+  cardName: Queen of Clubs
   isUpCard: 1

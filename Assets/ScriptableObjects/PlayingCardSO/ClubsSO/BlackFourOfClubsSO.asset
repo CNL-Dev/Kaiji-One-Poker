@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BlackFourOfClubsSO
   m_EditorClassIdentifier: 
   cardTransform: {fileID: 1952313741557635808, guid: 234c417ad4ea2f04e8b3b6266c06ef87, type: 3}
-  cardRank: 3
-  cardName: Black Four of Clubs
+  cardRank: 2
+  cardName: Four of Clubs
   isUpCard: 0
