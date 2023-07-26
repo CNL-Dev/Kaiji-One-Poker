@@ -20,9 +20,9 @@ public class DealerManager : MonoBehaviour
         Instance = this;
     }
 
-    // Draws a card and returns it to the appropaite actor (either the player or the opponent).
+    // Gets a card and returns it to the appropiate actor (either the player or the opponent).
     // TODO: Implement the appropiate parameter to handle the actor to return the card to.
-    public PlayingCardSO DrawCard()
+    public PlayingCardSO GetCard()
     {
         // Check to see if the playingCardSOList is empty.
         if( playingCardSOList == null)
