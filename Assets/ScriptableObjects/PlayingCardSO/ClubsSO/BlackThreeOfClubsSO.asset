@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c226e01a8f4aec84cbb4b4860811bdf3, type: 3}
+  m_Name: BlackThreeOfClubsSO
+  m_EditorClassIdentifier: 
+  cardTransform: {fileID: 5610180312041518366, guid: ccf83a9106ad63348a247f0729ba09ae, type: 3}
+  cardRank: 2
+  cardName: Black Three of Clubs
+  isUpCard: 0
