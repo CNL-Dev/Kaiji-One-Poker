@@ -22,8 +22,7 @@ public class DealerManager : MonoBehaviour
         Instance = this;
     }
 
-    // Gets a card and returns it to the appropiate actor (either the player or the opponent).
-    // TODO: Implement the appropiate parameter to handle the actor to return the card to.
+    // Gets a card and returns it to the actor.
     public PlayingCardSO GetCard()
     {
         // Check to see if the playingCardSOList is empty.
@@ -42,6 +41,7 @@ public class DealerManager : MonoBehaviour
     // and loser or if its a draw.
     private PlayingCardSO CompareCards(PlayingCardSO playerCard, PlayingCardSO opponentCard)
     {
+        // 
         if(playerCard.cardRank > opponentCard.cardRank)
         {
             // A 2 beats an Ace, the only instance of a down card
@@ -52,8 +52,10 @@ public class DealerManager : MonoBehaviour
                 return opponentCard;
             }
 
+            // Player wins
             return playerCard;
         }
+        // 
         else if(playerCard.cardRank < opponentCard.cardRank)
         {
             if (opponentCard.cardRank == PlayingCardSO.Rank.Ace &&
@@ -61,9 +63,12 @@ public class DealerManager : MonoBehaviour
             {
                 return playerCard;
             }
+
+            // Opponent wins
+            return opponentCard;
         }
 
-        // If nether side has won, then they have played cards of
+        // If neither side has won, then they have played cards of
         // equal value, which results in a draw 
         // which is represented by null.
         return null;
