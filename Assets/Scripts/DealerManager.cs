@@ -14,6 +14,8 @@ public class DealerManager : MonoBehaviour
     public static DealerManager Instance { get; private set; }
 
     [SerializeField] private List<PlayingCardSO> playingCardSOList;
+    private PlayingCardSO playerPlayingCard;
+    private PlayingCardSO opponentPlayingCard;
 
     public void Awake()
     {
@@ -34,6 +36,37 @@ public class DealerManager : MonoBehaviour
         int randomNum = UnityEngine.Random.Range(0, playingCardSOList.Count);
 
         return playingCardSOList[randomNum];
+    }
+
+    // Compares the cards that the two actors have played and determines a winner
+    // and loser or if its a draw.
+    private PlayingCardSO CompareCards(PlayingCardSO playerCard, PlayingCardSO opponentCard)
+    {
+        if(playerCard.cardRank > opponentCard.cardRank)
+        {
+            // A 2 beats an Ace, the only instance of a down card
+            // beating an up card
+            if(playerCard.cardRank == PlayingCardSO.Rank.Ace && 
+                opponentCard.cardRank == PlayingCardSO.Rank.Two)
+            {
+                return opponentCard;
+            }
+
+            return playerCard;
+        }
+        else if(playerCard.cardRank < opponentCard.cardRank)
+        {
+            if (opponentCard.cardRank == PlayingCardSO.Rank.Ace &&
+                playerCard.cardRank == PlayingCardSO.Rank.Two)
+            {
+                return playerCard;
+            }
+        }
+
+        // If nether side has won, then they have played cards of
+        // equal value, which results in a draw 
+        // which is represented by null.
+        return null;
     }
 
 
