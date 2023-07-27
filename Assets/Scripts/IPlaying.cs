@@ -9,11 +9,11 @@ using UnityEngine;
 public interface IPlaying
 {
     // Actor will draw a card
-    public PlayingCardSO DrawCard();
+    public void DrawCard();
 
     // Actor will play a card in their inventory
     public PlayingCardSO PlayCard();
 
     // Removes a card from the actor inventory
-    public void RemoveCard();
+    public void RemoveCard(int index);
 }

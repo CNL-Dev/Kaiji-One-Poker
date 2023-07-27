@@ -13,7 +13,7 @@ public class DealerManager : MonoBehaviour
     // Singleton
     public static DealerManager Instance { get; private set; }
 
-    private List<PlayingCardSO> playingCardSOList;
+    [SerializeField] private List<PlayingCardSO> playingCardSOList;
 
     public void Awake()
     {
@@ -31,9 +31,10 @@ public class DealerManager : MonoBehaviour
                 "PlayingCardSOList has playingCardSO's in the unity editor!");
         }
 
-        // This is temporary and is only here so that we can run the scene in the unity editor with this script
-        // This will be deleted when we get around to proper implementation.
-        PlayingCardSO tempPlayingCardSO =  new PlayingCardSO();
-        return tempPlayingCardSO;
+        int randomNum = UnityEngine.Random.Range(0, playingCardSOList.Count);
+
+        return playingCardSOList[randomNum];
     }
+
+
 }
