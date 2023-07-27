@@ -5,7 +5,6 @@ This is an attempt at a unity game that is based on the "One Poker" game in the 
 # To Do
 - Add a player actor and opponent 
 - Implement game logic (play state, win-lose conditions, etc)
-- Finish creating Playing Card Scriptable Objects
 - Create playing environment 
 - Add UI
 - A lot more
