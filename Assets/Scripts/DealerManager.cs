@@ -5,7 +5,7 @@ using UnityEngine;
 
 /// <summary>
 /// DealerManager will handle logic that relates to cards and their functionality.
-/// This singleton class will draw cards when appropiate, compare cards played, and deleted 
+/// This singleton class will draw cards when appropiate, compare cards played, and delete
 /// cards played in a hand. 
 /// </summary>
 public class DealerManager : MonoBehaviour
