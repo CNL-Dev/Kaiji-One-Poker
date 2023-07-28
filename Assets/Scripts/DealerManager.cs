@@ -41,7 +41,7 @@ public class DealerManager : MonoBehaviour
     // and loser or if its a draw.
     private PlayingCardSO CompareCards(PlayingCardSO playerCard, PlayingCardSO opponentCard)
     {
-        // 
+        // Check if player has played a higher rank card
         if(playerCard.cardRank > opponentCard.cardRank)
         {
             // A 2 beats an Ace, the only instance of a down card
@@ -55,7 +55,7 @@ public class DealerManager : MonoBehaviour
             // Player wins
             return playerCard;
         }
-        // 
+        // Check if opponent has played a higher rank card
         else if(playerCard.cardRank < opponentCard.cardRank)
         {
             if (opponentCard.cardRank == PlayingCardSO.Rank.Ace &&
@@ -73,6 +73,5 @@ public class DealerManager : MonoBehaviour
         // which is represented by null.
         return null;
     }
-
 
 }
