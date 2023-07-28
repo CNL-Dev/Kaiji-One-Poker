@@ -293,6 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playingCardSOList: []
+  lives: 0
 --- !u!1 &362521265
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,7 +853,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1639142168}
-  - component: {fileID: 1639142167}
   - component: {fileID: 1639142169}
   m_Layer: 0
   m_Name: Opponent
@@ -861,19 +861,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1639142167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1639142166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b698daabd2c6b443a9de6d096dcba41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playingCardSOList: []
 --- !u!4 &1639142168
 Transform:
   m_ObjectHideFlags: 0
@@ -901,3 +888,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c603ed6e271334489d14eeac98a90d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playingCardSOList: []
+  lives: 5

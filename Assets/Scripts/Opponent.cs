@@ -2,23 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Opponent : MonoBehaviour, IPlaying
+public class Opponent : Actor, IPlaying
 {
     public static Opponent Instance { get; private set; }
-
-    [SerializeField] private List<PlayingCardSO> playingCardSOList = new List<PlayingCardSO>();
-    // Opponent can have no more than 2 cards at a time.
-    private int maxPlayingCards = 2;
 
     public void Awake()
     {
         Instance = this;
+
+        playingCardSOList = new List<PlayingCardSO>();
+        lives = 5;
     }
 
     // Draws a card and adds it to the playingCardSOList.
     public void DrawCard()
     {
-        if (!(playingCardSOList.Count >= maxPlayingCards))
+        if (!(playingCardSOList.Count >= playingCardsMax))
         {
             playingCardSOList.Add(DealerManager.Instance.GetCard());
         }
@@ -33,12 +32,6 @@ public class Opponent : MonoBehaviour, IPlaying
     public void RemoveCard(int index)
     {
         playingCardSOList.RemoveAt(index);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
