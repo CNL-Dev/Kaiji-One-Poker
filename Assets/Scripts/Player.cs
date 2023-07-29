@@ -38,6 +38,9 @@ public class Player : Actor, IPlaying
     // Update is called once per frame
     void Update()
     {
-        
+        if(playingCardSOList[0] != null)
+        {
+            
+        }
     }
 }

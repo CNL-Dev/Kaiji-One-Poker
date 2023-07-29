@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 public abstract class Actor : MonoBehaviour
 {
+    [SerializeField] protected Transform actorLeftHandPoint;
+    [SerializeField] protected Transform actorRightHandPoint;
     [SerializeField] protected List<PlayingCardSO> playingCardSOList;
     [SerializeField] protected int lives;
 
