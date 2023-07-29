@@ -32,9 +32,18 @@ public class DealerManager : MonoBehaviour
                 "PlayingCardSOList has playingCardSO's in the unity editor!");
         }
 
+        // Selects either the first or second card.
         int randomNum = UnityEngine.Random.Range(0, playingCardSOList.Count);
 
         return playingCardSOList[randomNum];
+    }
+
+    // Spawn a card in the appropiate spot within a scene.
+    public void SpawnCard(PlayingCardSO playingCardSO, Transform position)
+    {
+        Transform playingCardTransform = Instantiate(playingCardSO.cardTransform);
+        PlayingCardObject playingCardObject = playingCardTransform.GetComponent<PlayingCardObject>();
+        // TODO: Finish implementing! 
     }
 
     // Compares the cards that the two actors have played and determines a winner
@@ -42,11 +51,11 @@ public class DealerManager : MonoBehaviour
     private PlayingCardSO CompareCards(PlayingCardSO playerCard, PlayingCardSO opponentCard)
     {
         // Check if player has played a higher rank card
-        if(playerCard.cardRank > opponentCard.cardRank)
+        if (playerCard.cardRank > opponentCard.cardRank)
         {
             // A 2 beats an Ace, the only instance of a down card
             // beating an up card
-            if(playerCard.cardRank == PlayingCardSO.Rank.Ace && 
+            if (playerCard.cardRank == PlayingCardSO.Rank.Ace &&
                 opponentCard.cardRank == PlayingCardSO.Rank.Two)
             {
                 return opponentCard;
@@ -56,7 +65,7 @@ public class DealerManager : MonoBehaviour
             return playerCard;
         }
         // Check if opponent has played a higher rank card
-        else if(playerCard.cardRank < opponentCard.cardRank)
+        else if (playerCard.cardRank < opponentCard.cardRank)
         {
             if (opponentCard.cardRank == PlayingCardSO.Rank.Ace &&
                 playerCard.cardRank == PlayingCardSO.Rank.Two)
@@ -73,5 +82,4 @@ public class DealerManager : MonoBehaviour
         // which is represented by null.
         return null;
     }
-
 }
