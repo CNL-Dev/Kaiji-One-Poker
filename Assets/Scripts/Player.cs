@@ -22,6 +22,16 @@ public class Player : Actor, IPlaying
         {
             playingCardSOList.Add(DealerManager.Instance.GetCard());
         }
+
+        // Spawns a card in the appropiate player hand.
+        if (playingCardSOList[0] is PlayingCardSO && actorLeftHandPoint.childCount < 1)
+        {
+            DealerManager.Instance.SpawnCard(playingCardSOList[0], actorLeftHandPoint);
+        }
+        else if (playingCardSOList[1] is PlayingCardSO && actorRightHandPoint.childCount < 1)
+        {
+            DealerManager.Instance.SpawnCard(playingCardSOList[1], actorRightHandPoint);
+        }
     }
 
     public PlayingCardSO PlayCard()
@@ -38,9 +48,11 @@ public class Player : Actor, IPlaying
     // Update is called once per frame
     void Update()
     {
-        if(playingCardSOList[0] != null)
+        // This is purely for testing purposes 
+        // Will be deleted later.
+        if(playingCardSOList.Count < 3)
         {
-            
-        }
+            DrawCard();
+        }       
     }
 }

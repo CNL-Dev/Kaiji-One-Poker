@@ -39,11 +39,10 @@ public class DealerManager : MonoBehaviour
     }
 
     // Spawn a card in the appropiate spot within a scene.
-    public void SpawnCard(PlayingCardSO playingCardSO, Transform position)
+    public void SpawnCard(PlayingCardSO playingCardSO, Transform parent)
     {
-        Transform playingCardTransform = Instantiate(playingCardSO.cardTransform);
+        Transform playingCardTransform = Instantiate(playingCardSO.cardTransform, parent);
         PlayingCardObject playingCardObject = playingCardTransform.GetComponent<PlayingCardObject>();
-        // TODO: Finish implementing! 
     }
 
     // Compares the cards that the two actors have played and determines a winner
