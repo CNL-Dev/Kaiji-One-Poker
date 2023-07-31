@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,9 @@ public class Player : Actor, IPlaying
 {
     // Singleton
     public static Player Instance {  get; private set; }
+
+    public event EventHandler OnCardPicked;
+    public event EventHandler OnCardRemoved;
 
     public void Awake()
     {
@@ -21,6 +25,7 @@ public class Player : Actor, IPlaying
         if(!(playingCardSOList.Count >= playingCardsMax))
         {
             playingCardSOList.Add(DealerManager.Instance.GetCard());
+            OnCardPicked?.Invoke(this, EventArgs.Empty);
         }
 
         // Spawns a card in the appropiate player hand.
@@ -43,6 +48,7 @@ public class Player : Actor, IPlaying
     public void RemoveCard(int index)
     {
         playingCardSOList.RemoveAt(index);
+        OnCardRemoved?.Invoke(this, EventArgs.Empty);
     }
 
     // Update is called once per frame
