@@ -24,6 +24,7 @@ public class Opponent : Actor, IPlaying
         if (!(playingCardSOList.Count >= playingCardsMax))
         {
             playingCardSOList.Add(DealerManager.Instance.GetCard());
+            OnCardPicked?.Invoke(this, EventArgs.Empty);
         }
     }
 
@@ -36,6 +37,7 @@ public class Opponent : Actor, IPlaying
     public void RemoveCard(int index)
     {
         playingCardSOList.RemoveAt(index);
+        OnCardRemoved?.Invoke(this, EventArgs.Empty);
     }
 
     // Update is called once per frame
