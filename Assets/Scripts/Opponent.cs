@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,9 @@ using UnityEngine;
 public class Opponent : Actor, IPlaying
 {
     public static Opponent Instance { get; private set; }
+
+    public event EventHandler OnCardPicked;
+    public event EventHandler OnCardRemoved;
 
     public void Awake()
     {
