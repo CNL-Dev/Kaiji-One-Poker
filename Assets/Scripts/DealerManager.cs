@@ -13,6 +13,19 @@ public class DealerManager : MonoBehaviour
     // Singleton
     public static DealerManager Instance { get; private set; }
 
+    // This state will determine the flow of
+    // the game. Certain actions and events
+    // will occur during these states.
+    private enum State
+    {
+        PlayerDraw,
+        OpponentDraw,
+        PlayerTurn,
+        OpponentTurn,
+        Comparison,
+        ResetTurn,
+    }
+
     [SerializeField] private List<PlayingCardSO> playingCardSOList;
     private PlayingCardSO playerPlayingCard;
     private PlayingCardSO opponentPlayingCard;

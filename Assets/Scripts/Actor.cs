@@ -14,5 +14,5 @@ public abstract class Actor : MonoBehaviour
 
     // Actors can have no more than two cards at any
     // given time.
-    protected int playingCardsMax = 2;
+    protected const int playingCardsMax = 2;
 }
