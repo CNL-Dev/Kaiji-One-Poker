@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 /// <summary>
@@ -18,6 +19,7 @@ public class DealerManager : MonoBehaviour
     // will occur during these states.
     private enum State
     {
+        Inactive,
         PlayerDraw,
         OpponentDraw,
         PlayerTurn,
@@ -29,6 +31,7 @@ public class DealerManager : MonoBehaviour
     [SerializeField] private List<PlayingCardSO> playingCardSOList;
     private PlayingCardSO playerPlayingCard;
     private PlayingCardSO opponentPlayingCard;
+    private State state;
 
     public void Awake()
     {
@@ -93,5 +96,48 @@ public class DealerManager : MonoBehaviour
         // equal value, which results in a draw 
         // which is represented by null.
         return null;
+    }
+
+    private void Update()
+    {
+        // Determines state of the current game.
+        // TODO: Implement appropiate logic for each case.
+        switch (state)
+        {
+            // Game has not started, so wait.
+            case State.Inactive:
+                break;
+            case State.PlayerDraw:
+                // Stuff goes here!
+                state = State.OpponentDraw;
+                break;
+            case State.OpponentDraw:
+                // Stuff goes here!
+                state = State.PlayerTurn;    
+                break;
+            case State.PlayerTurn:
+                // Stuff goes here!
+                state = State.OpponentTurn;
+                break;
+            case State.OpponentTurn:
+                // Stuff goes here!
+                state = State.Comparison;
+                break;
+            case State.Comparison:
+                // Stuff goes here!
+                state = State.ResetTurn;
+                break;
+            case State.ResetTurn:
+                // Stuff goes here!
+                state = State.PlayerDraw;
+                break;
+        }
+    }
+
+    // Starts the game proper.
+    private void StartCardGame()
+    {
+        if(state == State.Inactive)
+            state = State.PlayerDraw;
     }
 }
