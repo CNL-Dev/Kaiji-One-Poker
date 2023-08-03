@@ -14,6 +14,11 @@ public class DealerManager : MonoBehaviour
     // Singleton
     public static DealerManager Instance { get; private set; }
 
+    public event EventHandler OnPlayerDraw;
+    public event EventHandler OnOpponentDraw;
+    public event EventHandler OnPlayerTurn;
+    public event EventHandler OnOpponentTurn;
+
     // This state will determine the flow of
     // the game. Certain actions and events
     // will occur during these states.
@@ -109,18 +114,22 @@ public class DealerManager : MonoBehaviour
                 break;
             case State.PlayerDraw:
                 // Stuff goes here!
+                OnPlayerDraw?.Invoke(this, EventArgs.Empty);
                 state = State.OpponentDraw;
                 break;
             case State.OpponentDraw:
                 // Stuff goes here!
+                OnOpponentDraw?.Invoke(this, EventArgs.Empty);  
                 state = State.PlayerTurn;    
                 break;
             case State.PlayerTurn:
                 // Stuff goes here!
+                OnPlayerTurn?.Invoke(this, EventArgs.Empty);
                 state = State.OpponentTurn;
                 break;
             case State.OpponentTurn:
                 // Stuff goes here!
+                OnOpponentTurn?.Invoke(this, EventArgs.Empty);
                 state = State.Comparison;
                 break;
             case State.Comparison:
