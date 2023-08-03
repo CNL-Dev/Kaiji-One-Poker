@@ -19,6 +19,22 @@ public class Player : Actor, IPlaying
         lives = 5;
     }
 
+    void Start()
+    {
+        DealerManager.Instance.OnPlayerDraw += DealerManager_OnPlayerDraw;
+        DealerManager.Instance.OnPlayerTurn += DealerManager_OnPlayerTurn;
+    }
+
+    private void DealerManager_OnPlayerTurn(object sender, EventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void DealerManager_OnPlayerDraw(object sender, EventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
     // Draws a card and adds it to the playingCardSOList.
     public void DrawCard()
     {
