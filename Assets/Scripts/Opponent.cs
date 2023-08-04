@@ -26,12 +26,12 @@ public class Opponent : Actor, IPlaying
 
     private void DealerManager_OnOpponentTurn(object sender, EventArgs e)
     {
-        throw new NotImplementedException();
+        //PlayCard();
     }
 
     private void DealerManager_OnOpponentDraw(object sender, EventArgs e)
     {
-        throw new NotImplementedException();
+        DrawCard();
     }
 
     // Draws a card and adds it to the playingCardSOList.
