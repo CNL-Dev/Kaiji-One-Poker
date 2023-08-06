@@ -55,9 +55,11 @@ public class Player : Actor, IPlaying
         }
     }
 
+    // This should take input from a player action.
+    // I think all actions should be handled by mouse clicks.
     public PlayingCardSO PlayCard()
     {
-        
+        throw new NotImplementedException();
     }
 
     // Removes the card at the provided index.
