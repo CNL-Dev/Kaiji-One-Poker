@@ -134,6 +134,7 @@ public class DealerManager : MonoBehaviour
                 break;
             case State.Comparison:
                 // Stuff goes here!
+                // CompareCards();
                 state = State.ResetTurn;
                 break;
             case State.ResetTurn:
@@ -148,5 +149,16 @@ public class DealerManager : MonoBehaviour
     {
         if(state == State.Inactive)
             state = State.PlayerDraw;
+    }
+
+    // Setters for the player and opponent playingCardSO.
+    private void SetPlayerPlayingCard(PlayingCardSO playingCardSO)
+    {
+        playerPlayingCard = playingCardSO;
+    }
+
+    private void SetOpponentPlayingCard(PlayingCardSO playingCardSO)
+    {
+        opponentPlayingCard = playingCardSO;
     }
 }

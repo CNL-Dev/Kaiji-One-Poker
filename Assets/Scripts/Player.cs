@@ -57,7 +57,7 @@ public class Player : Actor, IPlaying
 
     public PlayingCardSO PlayCard()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     // Removes the card at the provided index.
