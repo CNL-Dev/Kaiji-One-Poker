@@ -72,11 +72,6 @@ public class Player : Actor, IPlaying
     // Update is called once per frame
     void Update()
     {
-        // This is purely for testing purposes 
-        // Will be deleted later.
-        if(playingCardSOList.Count < 3)
-        {
-            DrawCard();
-        }       
+              
     }
 }
