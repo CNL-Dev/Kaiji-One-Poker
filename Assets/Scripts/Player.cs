@@ -69,6 +69,11 @@ public class Player : Actor, IPlaying
         OnCardRemoved?.Invoke(this, EventArgs.Empty);
     }
 
+    public PlayingCardSO GetPlayingCardSO(int index)
+    {
+        return playingCardSOList[index];
+    }
+
     // Update is called once per frame
     void Update()
     {
