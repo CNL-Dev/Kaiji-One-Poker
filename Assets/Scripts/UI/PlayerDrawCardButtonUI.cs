@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // Handles the player drawing a card when prompted.
-public class PlayerDrawCardButton : MonoBehaviour
+public class PlayerDrawCardButtonUI : MonoBehaviour
 {
     [SerializeField] private Button playerDrawCardButton;
 
